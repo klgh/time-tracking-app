@@ -1,61 +1,91 @@
-# TimeTrackingApp
+# Time Tracking Dashboard
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/2bf36be9-5bdc-45e2-904f-1264c141440d/deploy-status)](https://app.netlify.com/projects/fefridaytimetrackerapp/deploys)
 
-This is the Frontend Mentor - Time tracking dashboard project.
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.4.
+This is a solution to the [Time tracking dashboard challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/time-tracking-dashboard-UIQ5u5p0N).
 
-## Development server
+## Overview
 
-To start a local development server, run:
+The challenge to build out this dashboard and get it looking as close to the design as possible. This project is built with **Angular** using the latest features like **Signals** and **Standalone Components**.
 
-```bash
-ng serve
-```
+### Features
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- **Responsive Layout**: Optimized for Mobile (375px) and Desktop (1440px) using CSS Grid.
+- **Interactive States**: Hover effects for all interactive elements.
+- **Dynamic Timeframes**: Switch between Daily, Weekly, and Monthly stats.
+  - "Daily" shows "Yesterday" data.
+  - "Weekly" shows "Last Week" data.
+  - "Monthly" shows "Last Month" data.
+- **Data Driven**: Data is fetched dynamically from a JSON file.
 
-## Code scaffolding
+### Links
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- Solution URL: [Time Tracking Dashboard](https://fefridaytimetrackerapp.netlify.app/)
+- Live Site URL: [Time Tracking Dashboard](https://fefridaytimetrackerapp.netlify.app/)
 
-```bash
-ng generate component component-name
-```
+## My process
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### Built With
 
-```bash
-ng generate --help
-```
+- **Semantic HTML5**
+- **CSS Custom Properties** & **Flexbox/Grid**
+- **[Angular](https://angular.dev/)** - 21.0.0
+- **TypeScript**
+- **Signals** - For reactive state management
+- **New Control Flow** (`@if`, `@for`)
+- **Netlify** - For deployment
 
-## Building
+## Getting Started
 
-To build the project run:
+### Prerequisites
 
-```bash
-ng build
-```
+Ensure you have Node.js and Yarn installed.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+### Installation
 
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+Clone the repository and install dependencies:
 
 ```bash
-ng e2e
+git clone <repository-url>
+cd time-tracking-dashboard-main/time-tracking-app
+yarn install
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+### Development Server
 
-## Additional Resources
+Run the development server:
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```bash
+yarn start
+```
+Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+### Build
+
+Build the project for production:
+
+```bash
+yarn build
+```
+The build artifacts will be stored in the `dist/` directory.
+
+### Running Tests
+
+Run unit tests via [Vitest](https://vitest.dev/):
+
+```bash
+yarn test
+```
+
+## Implementation Details
+
+- **`DashboardService`**: A singleton service that fetches the data and holds the `activeTimeframe` as a writable Signal.
+- **`ProfileCardComponent`**: Updates the `activeTimeframe` signal on user interaction.
+- **`TrackingCardComponent`**: Uses `computed` signals to automatically derive the correct hours and label based on the `activeTimeframe` and the input `activity`.
+
+## Author
+- Website - [Kaleigh](https://kaleigh.dev)
+- Frontend Mentor - [@klgh](https://www.frontendmentor.io/profile/klgh)
+
+## Acknowledgments
+Thank you to Google Antigravity for the assistance with the Angular documentation for the Signals and Standalone Components.
