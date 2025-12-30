@@ -1,4 +1,5 @@
 # TimeTrackingApp
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2bf36be9-5bdc-45e2-904f-1264c141440d/deploy-status)](https://app.netlify.com/projects/fefridaytimetrackerapp/deploys)
 
 This is the Frontend Mentor - Time tracking dashboard project.
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.4.
